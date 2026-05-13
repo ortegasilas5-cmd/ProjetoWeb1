@@ -1,0 +1,25 @@
+CREATE DATABASE BDASPB;
+
+-- USANDO BANCO DE DADO
+
+USE BDASPB;
+
+-- CRIANDO AS TABELAS DE BANCO DE DADOS
+
+CREATE TABLE Usuarios (
+Id INT PRIMARY KEY auto_increment,
+Nome VARCHAR (40) NOT NULL,
+Email VARCHAR(100) UNIQUE,
+Senha VARCHAR(250) NOT NULL,
+Nivel VARCHAR(40) DEFAULT 'USUARIO',
+DataCadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- INSERINDO DADOS DO BANCO
+INSERT INTO Usuarios(Nome,Email,Senha,Nivel) VALUES ('Administrador','admin@gmail.com','123456','Admin');
+
+INSERT INTO Usuarios(Nome,Email,Senha) VALUES ('Funcionario','usuario@gmail.com','123456');
+
+-- CONSULTANDO AS TABELAS DO BANCO
+SELECT * FROM Usuarios;
+
